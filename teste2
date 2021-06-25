@@ -1,0 +1,24 @@
+@Test
+    public void buscaListagemDeCategorias() {
+
+        /*
+        Funcionalidade: Busca no Banco de Categorias.
+          Cenário: Busca por quantidade de questões.
+          Dado que navego para a página de busca do banco de categorias
+          E digito 'Science: Computers' no campo de busca
+          Quando clico no botão de buscar
+          Então visualizo a listagem com 25 itens e o controle de paginação.
+        /
+
+        driver.findElement(By.xpath("//[@id="page-top"]/section/div/div/div/a[1]")).click();                         //Click em Browser.
+        Select options = new Select (driver.findElement(By.id("type")));
+        options.selectByVisibleText("Category");                                                                        //Seleciona "Category" em lista.
+        driver.findElement(By.xpath("//[@id="query"]")).sendKeys("Science: Computers");                                //Insere o texto no campo de busca.
+        driver.findElement(By.xpath("//[@id="page-top"]/div[1]/form/div/button")).click();                            //Click em Search.
+
+        int verifyList = driver.findElements(By.xpath("//[@id="page-top"]/div[2]/table/tbody/tr")).size();
+        assertEquals(verifyList, 25);                                                                                    //Verifica os 25 itens da listagem.
+
+        WebElement confirmPagination = driver.findElement(By.xpath("//[@id="page-top"]/div[2]/center/ul"));
+        assertTrue(confirmPagination.isDisplayed());                                                                    //Verifica se paginação é exibido.
+    }
